@@ -349,6 +349,7 @@ function getTheme({ theme, name }) {
         scope: [
           "constant",
           "entity.name.constant",
+          "variable.other.property",
           "variable.other.constant",
           "variable.other.enummember",
           "variable.language",
@@ -376,7 +377,8 @@ function getTheme({ theme, name }) {
           "meta.tag.attributes",
           "entity.name.constant",
           "meta.object.member",
-          "meta.embedded.expression"
+          "meta.embedded.expression",
+          "entity.name.namespace",
         ],
         settings: {
           foreground: color.fg.default,
@@ -441,13 +443,10 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: "variable",
-        settings: {
-          foreground: lightDark(scale.orange[6], scale.orange[2])
-        },
-      },
-      {
-        scope: "variable.other",
+        scope: [
+          "variable",
+          "variable.other"
+        ],
         settings: {
           foreground: color.fg.default,
         },
